@@ -67,7 +67,7 @@ export default function Header({ isDark, onToggleDarkMode }: HeaderProps) {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden fixed inset-0 top-[73px] bg-white dark:bg-gray-900 z-40 transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`md:hidden fixed inset-0 top-[73px] bg-white dark:bg-gray-900 z-40 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
         <nav className="flex flex-col items-center gap-8 pt-12">
           {navItems.map((item) => (
             <Link
