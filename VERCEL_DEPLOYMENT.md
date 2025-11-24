@@ -1,26 +1,24 @@
-# Vercel Deployment Guide
+# Vercel Deployment Guide - UPDATED ✅
 
-## 🚀 Steps to Deploy on Vercel
+## 🚀 Quick Deploy (5 Minutes)
 
 ### 1. Push Code to GitHub
 ```bash
 git add .
-git commit -m "Add Vercel configuration"
+git commit -m "Deploy with serverless functions"
 git push origin main
 ```
 
-### 2. Import Project in Vercel
-1. Go to [vercel.com](https://vercel.com)
-2. Click "New Project"
-3. Import your GitHub repository
-4. Configure project settings:
-   - **Framework Preset**: Vite
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist/spa`
-   - **Install Command**: `npm install`
+### 2. Import to Vercel
+1. Go to [vercel.com](https://vercel.com) and sign in
+2. Click **"New Project"**
+3. Import your **GitHub repository**
+4. Vercel will **auto-detect** settings - just click **"Deploy"**
 
 ### 3. Add Environment Variables
-In Vercel Dashboard → Settings → Environment Variables, add:
+After first deployment:
+1. Go to **Project Settings** → **Environment Variables**
+2. Add these variables:
 
 ```
 SMTP_USER=your-email@gmail.com
@@ -28,10 +26,13 @@ SMTP_PASS=your-gmail-app-password
 ADMIN_EMAIL=your-email@gmail.com
 ```
 
-⚠️ **Important**: Make sure to use Gmail App Password, not your regular password.
+⚠️ **Important**: Use Gmail App Password (not regular password)
+- See [Gmail App Password Guide](https://support.google.com/accounts/answer/185833)
 
-### 4. Deploy
-Click "Deploy" and wait for the build to complete.
+3. Click **"Redeploy"** after adding variables
+
+### 4. Done! 🎉
+Your portfolio is live with **full contact form functionality**!
 
 ## 📝 Important Notes
 

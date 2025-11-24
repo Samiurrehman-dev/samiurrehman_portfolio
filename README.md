@@ -145,16 +145,36 @@ Sami_ur_rehman/
 ## 🌐 Deployment
 
 ### Vercel (Recommended)
-1. Push your code to GitHub
-2. Import project in Vercel
-3. Add environment variables in Vercel dashboard
-4. Deploy
+1. **Push code to GitHub**
+```bash
+git add .
+git commit -m "Deploy to Vercel"
+git push origin main
+```
+
+2. **Import in Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Click "New Project"
+   - Import your GitHub repository
+   - Vercel will auto-detect settings
+
+3. **Add Environment Variables**
+   - Go to Project Settings → Environment Variables
+   - Add:
+     - `SMTP_USER` = your-email@gmail.com
+     - `SMTP_PASS` = your-gmail-app-password  
+     - `ADMIN_EMAIL` = your-email@gmail.com
+
+4. **Deploy**
+   - Click "Deploy"
+   - Your site will be live in minutes!
+
+**Note**: Contact form will work via serverless function in `api/contact.ts`
 
 ### Other Platforms
-- Build the project: `npm run build`
-- Deploy the `dist` folder
-- Set environment variables on hosting platform
-- Start server: `npm start`
+- **Netlify**: Similar to Vercel, works with serverless functions
+- **Railway**: Full-stack deployment with backend support
+- **Render**: Good for full-stack apps
 
 ## 📧 Email Configuration
 
