@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import nodemailer from 'nodemailer';
 
 interface ContactFormData {
   fname: string;
@@ -50,11 +51,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
     }
 
-    // Import nodemailer dynamically
-    const nodemailer = await import('nodemailer');
-
     // Create transporter with Gmail SMTP
-    const transporter = nodemailer.default.createTransport({
+    const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: process.env.SMTP_USER,
