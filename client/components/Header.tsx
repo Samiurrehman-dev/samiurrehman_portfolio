@@ -1,4 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { X } from "lucide-react";
 import DarkModeToggle from "./DarkModeToggle";
 
 interface HeaderProps {
@@ -8,6 +10,7 @@ interface HeaderProps {
 
 export default function Header({ isDark, onToggleDarkMode }: HeaderProps) {
   const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
     { path: "/", label: "HOME" },
@@ -15,6 +18,10 @@ export default function Header({ isDark, onToggleDarkMode }: HeaderProps) {
     { path: "/portfolio", label: "PORTFOLIO" },
     { path: "/contact", label: "CONTACT" },
   ];
+
+  const handleLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <header className="w-full py-4 px-6 md:px-12 lg:px-20 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm fixed top-0 z-50 border-b border-transparent dark:border-gray-800">
@@ -47,12 +54,36 @@ export default function Header({ isDark, onToggleDarkMode }: HeaderProps) {
 
           <DarkModeToggle isDark={isDark} onToggle={onToggleDarkMode} />
 
-          <button className="md:hidden flex flex-col gap-1.5 p-2">
-            <span className="w-6 h-0.5 bg-[#545555] dark:bg-gray-300"></span>
-            <span className="w-6 h-0.5 bg-[#545555] dark:bg-gray-300"></span>
-            <span className="w-6 h-0.5 bg-[#545555] dark:bg-gray-300"></span>
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden flex flex-col gap-1.5 p-2 z-50"
+            aria-label="Toggle menu"
+          >
+            <span className={`w-6 h-0.5 bg-[#545555] dark:bg-gray-300 transition-transform ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+            <span className={`w-6 h-0.5 bg-[#545555] dark:bg-gray-300 transition-opacity ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`w-6 h-0.5 bg-[#545555] dark:bg-gray-300 transition-transform ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
           </button>
         </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`md:hidden fixed inset-0 top-[73px] bg-white dark:bg-gray-900 z-40 transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <nav className="flex flex-col items-center gap-8 pt-12">
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              onClick={handleLinkClick}
+              className={`text-xl font-normal transition-colors ${
+                location.pathname === item.path
+                  ? "text-[#6CC0E8]"
+                  : "text-[#79787E] dark:text-gray-400 hover:text-[#6CC0E8]"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
       </div>
     </header>
   );
