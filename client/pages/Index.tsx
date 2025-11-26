@@ -446,7 +446,7 @@ export default function Index() {
                   }}
                 >
                   <img
-                    src="sami.jpg"
+                    src="sami.jpeg"
                     alt="Sami Ur Rehman - Web Developer"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
