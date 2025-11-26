@@ -264,7 +264,7 @@ export default function About() {
               
               <div className="space-y-12">
                 <div className="space-y-4">
-                  <p className="text-xs text-[#676769] dark:text-gray-400">2024-2025</p>
+                  <p className="text-xs text-[#676769] dark:text-gray-400">2026-2025</p>
                   
                   <div className="relative">
                     <div className="h-6 bg-[#F5F7F9] dark:bg-gray-700 relative">
@@ -357,7 +357,7 @@ export default function About() {
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
           <div className="text-center space-y-4">
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              © 2024 Sami Ur Rehman. All rights reserved.
+              © 2026 Sami Ur Rehman. All rights reserved.
             </p>
           </div>
         </div>

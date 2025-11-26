@@ -218,7 +218,7 @@ Dark mode is automatically handled using `localStorage` and system preferences.
 
 ## 📝 License
 
-© 2024 Sami Ur Rehman. All rights reserved.
+© 2026 Sami Ur Rehman. All rights reserved.
 
 ## 🙏 Acknowledgments
 

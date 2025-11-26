@@ -143,7 +143,7 @@ export default function Portfolio() {
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
           <div className="text-center space-y-4">
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              © 2024 Sami Ur Rehman. All rights reserved.
+              © 2026 Sami Ur Rehman. All rights reserved.
             </p>
           </div>
         </div>
